@@ -21,23 +21,40 @@ public class UserModel {
     @GeneratedValue(generator = "UUID")
     private UUID id;
 
-    @Column(name = "nm_usuario")
+    @Column(name = "nome_user")
     private String nome;
     
-    @Column(name = "email_usuario", unique = true)
+    @Column(name = "email_user", unique = true)
     private String email;
 
-    @Column(name = "senha_usuario")
+    @Column(name = "senha_user")
     private String senha;
+
+    @Column(name = "endereco_user")
+    private String endereco;
+
+    @Column(name = "telefone_user")
+    private String telefone;
+
+    @Column(name = "cpf_user")
+    private String cpf;
+
+    @Column(name = "datanasci_user")
+    private String data_nasci;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
 
     public UserModel() {}
 
-    public UserModel(String nome, String email, String senha) {
+    public UserModel(String nome, String email, String senha, String endereco, String telefone, String cpf, String data_nasci) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
+        this.endereco = endereco;
+        this.telefone = telefone;
+        this.cpf = cpf;
+        this.data_nasci = data_nasci;
+
     }
-}
+}    
